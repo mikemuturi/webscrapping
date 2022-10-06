@@ -1,0 +1,62 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <h1>Web Scrapping with Javascript</h1>
+        <h4>Add web url to be scrapped</h4>
+        <input type="text" placeholder="paste url here" />
+        <button type="submit" onclick="submitChannel()">Scrap</button> 
+        
+        <div class="container"></div>
+        <script>
+
+            function submitChannel(){
+
+                const channelValue = documment.querySelector('.channel-input')
+            }
+           function newEl(type,attri={}){
+            const el=document.createElement(type);
+            for (let attr in attri){
+                const value=attri[attr];
+                if (attr == 'innerText') el.innerText =value;
+                else el.setAttribute(attr,value);
+            }return el;
+           } 
+
+           const creators =[
+            {name:'mike',Image:'http://'},
+            {name:'muturi',Image:'http://'},
+            {name:'Irungu',Image:'http://'},
+           ]
+
+
+           const ctr =document.querySelector(".container");
+
+           creators.forEach(creator=>{
+            const card =newEl('div',{class:'card'});
+            const title =newEl('h4',{innerText:creators.name});
+            const Image=newEl('image',{src:creators.image});
+            card.appendChild(title);
+            card.appendChild(image);
+            ctr.appendChild(card)
+           })
+
+
+           const card =newEl("div",{class:"card"}); 
+           ctr.appendChild(card);
+
+
+        </script>
+        <style>
+            .container{
+                display: flex;
+            }
+            .card{
+                margin: 5px;
+                padding: 20px;
+                border: 1px solid blue;
+            }
+        </style>
+    </body>
+</html>
